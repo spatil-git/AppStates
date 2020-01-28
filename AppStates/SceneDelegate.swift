@@ -8,11 +8,46 @@
 
 import UIKit
 
+enum SceneState {
+    case notRunning
+    case launching
+    case initialized
+    case inactive
+    case active
+    case background
+    case wakingUp
+    case terminated
+}
+
+extension SceneState:CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .notRunning:
+            return "Not Running"
+        case .launching:
+            return "launching"
+        case .initialized:
+            return "initialized"
+        case .inactive:
+            return "Inactive"
+        case .active:
+            return "Active"
+        case .background:
+            return "Background"
+        case .wakingUp:
+            return "Waking UP"
+        case .terminated:
+            return "Terminated"
+        }
+    }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    var state:SceneState = .inactive
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -30,22 +65,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        print("\(#function) called: \(state) -> \(AppState.active)")
+        state = .active
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        print("\(#function) called: \(state) -> \(AppState.inactive)")
+        state = .inactive
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        print("\(#function) called: \(state) -> \(AppState.wakingUp)")
+        state = .wakingUp
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        print("\(#function) called: \(state) -> \(AppState.background)")
+        state = .background
     }
 
 

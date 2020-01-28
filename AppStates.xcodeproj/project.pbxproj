@@ -49,6 +49,7 @@
 		920E2CF423DF12CA00B7D801 /* AppStatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		920E2CF823DF12CA00B7D801 /* AppStatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatesUITests.swift; sourceTree = "<group>"; };
 		920E2CFA23DF12CA00B7D801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920E2D0623E05B8500B7D801 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		920E2CCA23DF12C600B7D801 = {
 			isa = PBXGroup;
 			children = (
+				920E2D0623E05B8500B7D801 /* README.md */,
 				920E2CD523DF12C600B7D801 /* AppStates */,
 				920E2CEC23DF12CA00B7D801 /* AppStatesTests */,
 				920E2CF723DF12CA00B7D801 /* AppStatesUITests */,
